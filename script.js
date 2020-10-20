@@ -81,14 +81,15 @@ var newScore = {
         name: userNameInput,
         score: secondsLeft
     };
-}
+
     // check if there are scores in local storage first and take value
     //if not, make a blank array
     var highScores = JSON.parse(localStorage.getItem("highScores") || "[]");
     // push object into score array
-    highScores.push(newScore)
+    highScores.push(newScore);
     // turn objects into an array of strings + put it into local storage
     localStorage.setItem("highScores", JSON.stringify(highScores));
+}
 
 function hideFeedback(){
     var pElement = document.getElementsByClassName("feedback")[0]
