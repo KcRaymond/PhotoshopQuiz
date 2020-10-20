@@ -2,7 +2,7 @@
 //Declare the first varibles needed
 var startBtn = document.getElementById("startBtn");
 var submitBtn = document.querySelector("button.submitBtn")
-var secondsLeft = (questions.length * 10 + 1);
+var secondsLeft = (questions.length * 15 + 1);
 var timer = document.getElementById("timer");
 var submitScoreElement = document.querySelector("#submit-score");
 var userScoreElement = document.getElementById("user-score");
@@ -44,7 +44,7 @@ function makeQuestions() {
     answer = questions[questionNumber].answer
 
     questionHead.textContent = questions[questionNumber].title;
-    answerChoices.innerHTML = "";
+    answerChoices.textContent = "";
 
     var choices = questions[questionNumber].choices;
 
@@ -81,15 +81,14 @@ var newScore = {
         name: userNameInput,
         score: secondsLeft
     };
-
     // check if there are scores in local storage first and take value
     //if not, make a blank array
     var highScores = JSON.parse(localStorage.getItem("highScores") || "[]");
     // push object into score array
-    highScores.push(newScore);
+    highScores.push(newScore)
     // turn objects into an array of strings + put it into local storage
     localStorage.setItem("highScores", JSON.stringify(highScores));
-}
+}    
 
 function hideFeedback(){
     var pElement = document.getElementsByClassName("feedback")[0]
@@ -107,12 +106,12 @@ answerChoices.addEventListener("click", function (event) {
     // evaluation of user's answer choices & feedback
     if (answer === event.target.textContent) {   
         pElement.innerHTML = "You got it correct! Great Job";
-        setTimeout(hideFeedback,1300);
+        setTimeout(hideFeedback,1225);
         showFeedback();   
         
     } else {
         pElement.innerHTML = "Sorry, wrong. You will have to retake the quiz...";
-        setTimeout(hideFeedback,1300);
+        setTimeout(hideFeedback,1225);
         secondsLeft = secondsLeft - 10;
         showFeedback();
     }    
