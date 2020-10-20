@@ -23,4 +23,4 @@ THEN I can save my initials and score
 
 The following link demonstrates the application functionality:
 
-![Photoshop quiz](https://kcraymond.github.io/PhotoshopQuiz/)
+[Photoshop quiz](https://kcraymond.github.io/PhotoshopQuiz/)
