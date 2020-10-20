@@ -1,11 +1,11 @@
-# PhotoshopQuiz
+PhotoshopQuiz
 
 ```
-AS A coding boot camp student
+As a coding boot camp student
 Make a timed quiz of your choice that stores high scores.
 ```
 
-## Acceptance Criteria
+Acceptance Criteria
 
 ```
 GIVEN I am taking a quiz
@@ -21,6 +21,6 @@ WHEN the game is over
 THEN I can save my initials and score
 ```
 
-The following animation demonstrates the application functionality:
+The following link demonstrates the application functionality:
 
-![code quiz](./Assets/04-web-apis-homework-demo.gif)
+![Photoshop quiz](https://kcraymond.github.io/PhotoshopQuiz/)

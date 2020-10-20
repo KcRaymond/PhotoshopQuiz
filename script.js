@@ -57,5 +57,60 @@ function makeQuestions() {
 }
 // need to generate question answer array for function
 
+// display option to enter name to scoreboard
+function displayScore() {
+    document.getElementById("quiz").classList.add('d-none');
+    document.getElementById("submit-score").classList.remove('d-none');
+    userScoreElement.textContent = "FINAL SCORE: " + secondsLeft + ".";
+}
+
+// Event Listeners for Main Buttons
+startBtn.addEventListener("click", startTimer);
+submitBtn.addEventListener("click", function (event) {
+    event.stopPropagation();
+    addScore();
+    
+    window.location.href = "./playerscores.html"
+});
+
+function addScore () {
+    userNameInput = document.getElementById("userName").value
+    
+    // create a new object with name and score keys
+var newScore = {
+        name: userNameInput,
+        score: secondsLeft
+    };
+//working on figuring out local storage?????? 
+}
+
+function hideFeedback(){
+    var pElement = document.getElementsByClassName("feedback")[0]
+    pElement.style.display='none'
+}
+
+function showFeedback(){
+    var pElement = document.getElementsByClassName("feedback")[0]
+    pElement.removeAttribute('style');
+}
+
+answerChoices.addEventListener("click", function (event) {
+    var pElement = document.getElementsByClassName("feedback")[0]
+    
+    // evaluation of user's answer choices & feedback
+    if (answer === event.target.textContent) {   
+        pElement.innerHTML = "You got it correct! Great Job";
+        setTimeout(hideFeedback,1300);
+        showFeedback();   
+        
+    } else {
+        pElement.innerHTML = "Sorry, wrong. You will have to retake the quiz...";
+        setTimeout(hideFeedback,1300);
+        secondsLeft = secondsLeft - 10;
+        showFeedback();
+    }    
+    makeQuestions();
+});
+
 
 
